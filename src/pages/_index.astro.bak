@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<Layout title="Ammar Saber (xLe0x) | Security Researcher">
+  <div class="space-y-12">
+    <section class="py-12">
+      
+      <h1 class="text-5xl font-bold mb-4">
+        <span class="text-cyber-green">Ammar Mohamed Saber</span>
+        <span class="text-cyber-blue">(xLe0x)</span>
+      </h1>
+      
+      <p class="text-xl text-gray-300 mb-6">Breaking Security Boundaries | Ethical Hacker | CS Student</p>
+      
+      <p class="text-gray-400 max-w-2xl">
+        Transforming curiosity into security solutions. Specializing in Web App Security,
+        Network Penetration, and Active Directory exploitation. CS student by day,
+        CTF player by night. Currently diving deep into the realm of Active Directory security.
+      </p>
+
+      <div class="mt-6">
+        <SocialLinks />
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-cyber-blue">Arsenal</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-cyber-green/20 p-6 rounded-lg backdrop-blur-sm hover:border-cyber-green/40 transition-colors">
+          <h3 class="text-cyber-green mb-3 text-xl">Web Exploitation</h3>
+          <p class="text-gray-400">Hunting vulnerabilities, breaking web apps, mastering the OWASP Top 10</p>
+        </div>
+        <div class="border border-cyber-green/20 p-6 rounded-lg backdrop-blur-sm hover:border-cyber-green/40 transition-colors">
+          <h3 class="text-cyber-green mb-3 text-xl">Network Infiltration</h3>
+          <p class="text-gray-400">Mapping attack surfaces, exploiting network vulnerabilities, securing infrastructure</p>
+        </div>
+        <div class="border border-cyber-green/20 p-6 rounded-lg backdrop-blur-sm hover:border-cyber-green/40 transition-colors">
+          <h3 class="text-cyber-green mb-3 text-xl">Active Directory</h3>
+          <p class="text-gray-400">Mastering domain enumeration, privilege escalation, and post-exploitation techniques</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-cyber-blue">Battle Grounds</h2>
+      <div class="border border-cyber-green/20 p-6 rounded-lg backdrop-blur-sm">
+        <p class="text-gray-300">
+          Active CTF competitor specializing in web exploitation and AD challenges.
+          Constantly pushing boundaries and learning new attack vectors through
+          hands-on experience and real-world scenarios.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-cyber-blue">Latest Exploits</h2>
+      <div class="space-y-4">
+        <a href="/blog/active-directory" class="block border border-cyber-green/20 p-6 rounded-lg hover:bg-cyber-green/5 transition-colors">
+          <h3 class="text-cyber-green text-xl mb-2">Active Directory Penetration Testing Journey</h3>
+          <p class="text-gray-400">Documenting my path through the intricacies of Active Directory security assessment...</p>
+        </a>
+        <a href="/blog/understanding-xss" class="block border border-cyber-green/20 p-6 rounded-lg hover:bg-cyber-green/5 transition-colors">
+          <h3 class="text-cyber-green text-xl mb-2">Understanding Cross-Site Scripting (XSS)</h3>
+          <p class="text-gray-400">Deep dive into XSS vulnerabilities and modern prevention techniques...</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout></content>

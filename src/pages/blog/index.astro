@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { format } from 'date-fns';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Get unique tags from all posts
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<Layout title="xLe0x's Blog">
+  <h1 class="text-4xl font-bold mb-8 text-cyber-green">xLe0x's Blog</h1>
+  
+  <div class="mb-8">
+    <!--<h2 class="text-xl font-bold text-cyber-blue mb-4">Filter by Tags</h2>-->
+    <div class="flex flex-wrap gap-2">
+      {allTags.map(tag => (
+        <a
+          href={`/blog/tag/${tag}`}
+          class="bg-cyber-green/10 text-cyber-green px-3 py-1 rounded-full text-sm hover:bg-cyber-green/20 transition-colors"
+        >
+          #{tag}
+        </a>
+      ))}
+    </div>
+  </div>
+  
+  <div class="space-y-8">
+    {posts.map(post => (
+      <article class="border border-cyber-green/20 p-6 rounded-lg hover:bg-cyber-green/5">
+        <a href={`/blog/${post.slug}`}>
+          <h2 class="text-2xl font-bold text-cyber-green mb-2">{post.data.title}</h2>
+          <div class="text-gray-400 mb-4">
+            {format(post.data.pubDate, 'MMMM d, yyyy')}
+          </div>
+          <p class="text-gray-300 mb-4">{post.data.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.map(tag => (
+              <span class="bg-cyber-green/10 text-cyber-green px-2 py-1 rounded-full text-sm">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </a>
+      </article>
+    ))}
+  </div>
+</Layout>

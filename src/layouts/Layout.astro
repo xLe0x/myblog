@@ -1,0 +1,113 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "xLe0x, A Hacker." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-cyber-black text-gray-100 min-h-screen">
+    <nav class="border-b border-cyber-green/20 p-4">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-cyber-green font-mono text-2xl tracking-wide">~/security</a>
+        
+        <div class="space-x-6 hidden md:flex">
+          <a href="/" class="hover:text-cyber-green transition-colors">🏠 Base</a>
+          <a href="/about" class="hover:text-cyber-green transition-colors">👤 Profile</a>
+          <a href="/blog" class="hover:text-cyber-green transition-colors">📚 Logs</a>
+          <a href="/contact" class="hover:text-cyber-green transition-colors">📬 Signal</a>
+        </div>
+        
+        <!-- Mobile Hamburger Menu -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button class="text-cyber-green hover:text-cyber-blue focus:outline-none" id="hamburger-icon">
+            <span class="block w-6 h-0.5 bg-cyber-green mb-2"></span>
+            <span class="block w-6 h-0.5 bg-cyber-green mb-2"></span>
+            <span class="block w-6 h-0.5 bg-cyber-green"></span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-cyber-black/90 text-gray-300 absolute top-16 left-0 right-0 z-50 px-6 py-4">
+        <a href="/" class="block py-2 hover:text-cyber-green">🏠 Base</a>
+        <a href="/about" class="block py-2 hover:text-cyber-green">👤 Profile</a>
+        <a href="/blog" class="block py-2 hover:text-cyber-green">📚 Logs</a>
+        <a href="/contact" class="block py-2 hover:text-cyber-green">📬 Signal</a>
+      </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-6">
+      <slot />
+    </main>
+
+    <footer class="border-t border-cyber-green/20 p-4 mt-12">
+      <div class="max-w-4xl mx-auto text-center text-sm text-gray-400">
+        <p>&copy; {new Date().getFullYear()} Ammar Mohamed Saber. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript to toggle the mobile menu
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const mobileMenu = document.getElementById("mobile-menu");
+      
+      hamburgerIcon.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Fira Code';
+    src: url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+  }
+
+  :root {
+    font-family: 'Fira Code', monospace;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
+  }
+
+  /* Mobile menu styling */
+  #mobile-menu a {
+    font-size: 1.25rem;
+  }
+
+  #hamburger-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  #hamburger-icon span {
+    transition: all 0.3s ease;
+  }
+
+  #hamburger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+</style>
+

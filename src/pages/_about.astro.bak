@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<Layout title="About xLe0x | Security Researcher">
+  <div class="space-y-12">
+    <section class="relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-cyber-green/10 to-transparent -z-10"></div>
+      
+      <div class="max-w-3xl mx-auto text-center py-12">
+        <div class="inline-block p-1.5 rounded-full bg-gradient-to-r from-cyber-green to-cyber-blue mb-8">
+          <div class="bg-cyber-black rounded-full p-4">
+            <code class="text-xl text-cyber-green">whoami > xLe0x</code>
+          </div>
+        </div>
+
+        <h1 class="text-4xl font-bold mb-6">
+          <span class="text-cyber-green">Ammar Mohammed Saber</span>
+        </h1>
+        
+        <div class="prose prose-invert max-w-none">
+          <p class="text-xl text-gray-300 leading-relaxed">
+            Ethical hacker by choice, problem solver by nature. I turn coffee into exploits and curiosity into security solutions.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <SocialLinks />
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="border border-cyber-green/20 p-8 rounded-lg backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-cyber-blue mb-6">The Journey</h2>
+        <div class="space-y-4 text-gray-300">
+          <p>
+            My adventure in cybersecurity began with a simple question: "How does this work?" That
+            curiosity evolved into a passion for understanding and breaking (ethically, of course)
+            complex systems.
+          </p>
+          <p>
+            As a Computer Science student and CTF player, I've found my sweet spot at the intersection
+            of offensive security and creative problem-solving. Currently diving deep into Active Directory
+            security, I'm constantly pushing the boundaries of what I can learn and achieve.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border border-cyber-green/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-cyber-blue mb-4">Current Focus</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">▶</span>
+              Active Directory Exploitation
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">▶</span>
+              Web Application Security
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">▶</span>
+              Network Penetration Testing
+            </li>
+          </ul>
+        </div>
+
+        <div class="border border-cyber-green/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-cyber-blue mb-4">Arsenal</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">⚡</span>
+              CTF Problem Solving
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">⚡</span>
+              Vulnerability Assessment
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-green">⚡</span>
+              Security Research
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border border-cyber-green/20 p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold text-cyber-blue mb-4">Let's Hack Together</h2>
+        <p class="text-gray-300 mb-6">
+          Whether you're interested in collaboration, need security insights, or just want to talk tech,
+          I'm always open to connecting with fellow security enthusiasts.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-cyber-green/10 text-cyber-green px-6 py-3 rounded-lg border border-cyber-green/20 hover:bg-cyber-green/20 transition-colors"
+        >
+          Initialize Connection
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

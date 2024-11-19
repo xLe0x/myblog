@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<Layout title="About xLe0x | Cybersecurity Enthusiast">
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-cyber-green/10 to-transparent -z-10"></div>
+      
+      <div class="max-w-3xl mx-auto text-center py-12">
+        <div class="inline-block p-1.5 rounded-full bg-gradient-to-r from-cyber-green to-cyber-blue mb-8">
+          <div class="bg-cyber-black rounded-full p-4">
+            <code class="text-xl text-cyber-green">whoami > xLe0x</code>
+          </div>
+        </div>
+
+        <h1 class="text-4xl font-extrabold mb-6">
+          <span class="text-cyber-green">Ammar Mohamed Saber</span>
+        </h1>
+        
+        <p class="text-lg text-gray-300 leading-relaxed">
+          Junior penetration tester by day, CTF player by night. Breaking into systems (legally!), solving security puzzles, and mastering web, network, and Active Directory attacks.
+        </p>
+
+        <div class="mt-8 flex justify-center">
+          <SocialLinks />
+        </div>
+      </div>
+    </section>
+
+    <!-- My Focus -->
+    <section class="space-y-8">
+      <div class="border border-cyber-green/20 p-8 rounded-lg backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-cyber-blue mb-6">The Mission</h2>
+        <p class="text-gray-300 leading-relaxed">
+          My passion is offensive security. I specialize in web app pentesting, network infiltration, and dissecting Active Directory environments.  
+          Whether it’s mastering OWASP Top 10 vulnerabilities, exploiting complex networks, or escalating privileges in AD, my journey is fueled by curiosity and hands-on challenges.
+        </p>
+      </div>
+    </section>
+
+    <!-- Arsenal Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="border border-cyber-green/20 p-6 rounded-lg">
+        <h3 class="text-xl font-bold text-cyber-blue mb-4">My Arsenal</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-center gap-2">
+            <span class="text-cyber-green">⚡</span>
+            Web Exploitation & Vulnerability Hunting
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyber-green">⚡</span>
+            Network Recon & Exploitation
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyber-green">⚡</span>
+            Active Directory Enumeration & Privilege Escalation
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyber-green">⚡</span>
+            CTF Problem Solving & Knowledge Sharing
+          </li>
+        </ul>
+      </div>
+
+      <div class="border border-cyber-green/20 p-6 rounded-lg">
+        <h3 class="text-xl font-bold text-cyber-blue mb-4">What Drives Me</h3>
+        <p class="text-gray-300">
+          A relentless hunger to learn, grow, and share knowledge. From cracking CTFs to building tools for bug bounty hunters, I thrive on solving challenges and helping others succeed in security.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="border border-cyber-green/20 p-8 rounded-lg text-center">
+      <h2 class="text-2xl font-bold text-cyber-blue mb-4">Let’s Collaborate</h2>
+      <p class="text-gray-300 mb-6">
+        Have a project, challenge, or just want to exchange ideas?  
+        Let’s connect and hack the future together.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-cyber-green/10 text-cyber-green px-6 py-3 rounded-lg border border-cyber-green/20 hover:bg-cyber-green/20 transition-colors"
+      >
+        Reach Out
+      </a>
+    </section>
+  </div>
+</Layout>
+

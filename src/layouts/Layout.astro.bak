@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "xLe0x, A Hacker." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-cyber-black text-gray-100 min-h-screen">
+    <nav class="border-b border-cyber-green/20 p-4">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-cyber-green font-mono text-xl">~/security</a>
+        <div class="space-x-6">
+          <a href="/" class="hover:text-cyber-green">🏠 Base</a>
+          <a href="/about" class="hover:text-cyber-green">👤 Profile</a>
+          <a href="/blog" class="hover:text-cyber-green">📚 Logs</a>
+<!--          <a href="/projects" class="hover:text-cyber-green">Projects</a> -->
+          <a href="/contact" class="hover:text-cyber-green">📬 Signal</a>
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-4xl mx-auto p-6">
+      <slot />
+    </main>
+    <footer class="border-t border-cyber-green/20 p-4 mt-12">
+      <div class="max-w-4xl mx-auto text-center text-sm text-gray-400">
+        <p>&copy; {new Date().getFullYear()} Security Researcher. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Fira Code';
+    src: url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+  }
+  
+  :root {
+    font-family: 'Fira Code', monospace;
+  }
+  
+  code {
+    font-family: 'Fira Code', monospace;
+  }
+</style>
