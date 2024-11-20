@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'cyber-black': '#0a0a0a',
+        'cyber-black': '#111',
         'cyber-green': '#00ff00',
-        'cyber-blue': '#00ffff'
+        'cyber-blue': '#ee8'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

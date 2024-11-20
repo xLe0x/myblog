@@ -27,6 +27,7 @@ DOM-based XSS occurs when JavaScript modifies the DOM in an unsafe way, allowing
 3. Content Security Policy (CSP)
 4. HttpOnly Cookies
 
+<br/>
 ```javascript
 // Example of unsafe DOM manipulation
 element.innerHTML = userInput; // Bad!
@@ -34,5 +35,8 @@ element.innerHTML = userInput; // Bad!
 // Safe alternative
 element.textContent = userInput; // Good!
 ```
+<br/>
+![](/public/images/tryhackme/bookstore/console.png)
+
 
 Stay tuned for more detailed posts about specific XSS attack vectors and advanced prevention techniques.

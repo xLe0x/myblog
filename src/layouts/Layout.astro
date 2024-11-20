@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
@@ -20,10 +21,9 @@ const { title, description = "xLe0x, A Hacker." } = Astro.props;
   <body class="bg-cyber-black text-gray-100 min-h-screen">
     <nav class="border-b border-cyber-green/20 p-4">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="text-cyber-green font-mono text-2xl tracking-wide">~/security</a>
+        <a href="/" class="text-cyber-green font-mono text-2xl tracking-wide">~/xLe0x</a>
         
         <div class="space-x-6 hidden md:flex">
-          <a href="/" class="hover:text-cyber-green transition-colors">🏠 Base</a>
           <a href="/about" class="hover:text-cyber-green transition-colors">👤 Profile</a>
           <a href="/blog" class="hover:text-cyber-green transition-colors">📚 Logs</a>
           <a href="/contact" class="hover:text-cyber-green transition-colors">📬 Signal</a>
@@ -41,7 +41,6 @@ const { title, description = "xLe0x, A Hacker." } = Astro.props;
       
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-cyber-black/90 text-gray-300 absolute top-16 left-0 right-0 z-50 px-6 py-4">
-        <a href="/" class="block py-2 hover:text-cyber-green">🏠 Base</a>
         <a href="/about" class="block py-2 hover:text-cyber-green">👤 Profile</a>
         <a href="/blog" class="block py-2 hover:text-cyber-green">📚 Logs</a>
         <a href="/contact" class="block py-2 hover:text-cyber-green">📬 Signal</a>

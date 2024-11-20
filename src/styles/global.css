@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Global styles or in a custom stylesheet (e.g., styles.css) */
+::-webkit-scrollbar {
+  width: 12px;  /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;  /* cyber-black */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;  /* cyber-green */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff33;  /* cyber-blue */
+}
+
+.prose pre {
+background-color: #000 !important;
+}
