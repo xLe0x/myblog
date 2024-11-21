@@ -19,7 +19,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
       {allTags.map(tag => (
         <a
           href={`/blog/tag/${tag}`}
-          class="tag-item bg-cyber-green/10 text-cyber-green px-3 py-1 rounded-full text-sm hover:bg-cyber-green/20 transition-colors"
+          class="bg-cyber-green/10 text-cyber-green px-3 py-1 rounded-full text-sm hover:bg-cyber-green/20 transition-colors"
         >
           #{tag}
         </a>
@@ -29,7 +29,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
   
   <div class="space-y-8">
     {posts.map(post => (
-      <article class="blog-card border border-cyber-green/20 p-6 rounded-lg hover:bg-cyber-green/5 transition-all duration-300 ease-in-out">
+      <article class="border border-cyber-green/20 p-6 rounded-lg hover:bg-cyber-green/5">
         <a href={`/blog/${post.slug}`}>
           <h2 class="text-2xl font-bold text-cyber-green mb-2">{post.data.title}</h2>
           <div class="text-gray-400 mb-4">
@@ -38,7 +38,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
           <p class="text-gray-300 mb-4">{post.data.description}</p>
           <div class="flex flex-wrap gap-2">
             {post.data.tags.map(tag => (
-              <span class="tag-item bg-cyber-green/10 text-cyber-green px-2 py-1 rounded-full text-sm">
+              <span class="bg-cyber-green/10 text-cyber-green px-2 py-1 rounded-full text-sm">
                 #{tag}
               </span>
             ))}
@@ -48,23 +48,3 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
     ))}
   </div>
 </Layout>
-
-<style>
-  .blog-card {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .blog-card:hover {
-    background-color: rgba(0, 255, 85, 0.05); /* Subtle green tint */
-    transform: translateY(-2px); /* Slight lift effect */
-  }
-
-  .tag-item {
-    transition: background-color 0.3s ease; /* Only change background color */
-  }
-
-  .tag-item:hover {
-    background-color: rgba(0, 255, 85, 0.2); /* Slight green highlight */
-  }
-</style>
-

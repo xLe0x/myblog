@@ -5,7 +5,14 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "xLe0x, A Hacker." } = Astro.props;
+const { title, description = "Welcome to xLe0x's World!" } = Astro.props;
+
+const currentPath = Astro.url.pathname
+  .split('/')
+  .filter(segment => segment) // Remove empty segments
+  .slice(0, 1) // Keep only the first directory
+  .join('/');
+const dynamicLogo = `~/xLe0x${currentPath ? '/' + currentPath : ''}`;
 ---
 
 <!doctype html>
@@ -21,12 +28,12 @@ const { title, description = "xLe0x, A Hacker." } = Astro.props;
   <body class="bg-cyber-black text-gray-100 min-h-screen">
     <nav class="border-b border-cyber-green/20 p-4">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="text-cyber-green font-mono text-2xl tracking-wide">~/xLe0x</a>
+        <p class="text-cyber-green font-sans text-2xl tracking-wide">{dynamicLogo}</a>
         
         <div class="space-x-6 hidden md:flex">
-          <a href="/about" class="hover:text-cyber-green transition-colors">👤 Profile</a>
-          <a href="/blog" class="hover:text-cyber-green transition-colors">📚 Logs</a>
-          <a href="/contact" class="hover:text-cyber-green transition-colors">📬 Signal</a>
+         <a href="/" class="hover:text-cyber-green transition-colors">🕵 whoami</a>
+          <a href="/blog" class="hover:text-cyber-green transition-colors">🗃 /var/log/xle0x/b.logs</a>
+          <a href="/contact" class="hover:text-cyber-green transition-colors">📬 /var/mail/xle0x</a>
         </div>
         
         <!-- Mobile Hamburger Menu -->
@@ -41,9 +48,9 @@ const { title, description = "xLe0x, A Hacker." } = Astro.props;
       
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-cyber-black/90 text-gray-300 absolute top-16 left-0 right-0 z-50 px-6 py-4">
-        <a href="/about" class="block py-2 hover:text-cyber-green">👤 Profile</a>
-        <a href="/blog" class="block py-2 hover:text-cyber-green">📚 Logs</a>
-        <a href="/contact" class="block py-2 hover:text-cyber-green">📬 Signal</a>
+         <a href="/" class="hover:text-cyber-green transition-colors">🕵 whoami</a>
+        <a href="/blog" class="block py-2 hover:text-cyber-green">🗃 /var/log/xle0x/b.logs</a>
+        <a href="/contact" class="block py-2 hover:text-cyber-green">📬 /var/mail/xle0x</a>
       </div>
     </nav>
 
@@ -70,43 +77,6 @@ const { title, description = "xLe0x, A Hacker." } = Astro.props;
 </html>
 
 <style is:global>
-  @font-face {
-    font-family: 'Fira Code';
-    src: url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-  }
 
-  :root {
-    font-family: 'Fira Code', monospace;
-  }
-
-  code {
-    font-family: 'Fira Code', monospace;
-  }
-
-  /* Mobile menu styling */
-  #mobile-menu a {
-    font-size: 1.25rem;
-  }
-
-  #hamburger-icon {
-    display: block;
-    cursor: pointer;
-  }
-
-  #hamburger-icon span {
-    transition: all 0.3s ease;
-  }
-
-  #hamburger-icon.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  #hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  #hamburger-icon.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
 </style>
 

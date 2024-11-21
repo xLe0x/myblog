@@ -1,14 +1,8 @@
 ---
-heroImage: /public/images/hackthebox/cap/cap-head.png
-category: Hack The Box
-description: 'Cap: an easy hack the box machine'
-pubDate: 2024-11-10T22:00:00.000Z
-tags:
-  - network
-  - pcap
-  - idor
-  - web
-title: Cap | Easy Hack The Box Machine
+title: "Pcap | Easy Hackthebox Room"
+description: "An easy hackthebox room."
+pubDate: 2024-11-19
+tags: ["web-security","idor", "pcap", "wireshark"]
 ---
 
 # Enumeration
@@ -97,15 +91,15 @@ PORT   STATE SERVICE VERSION
 
 visiting website indicates it's a network stuff dashboard:
 
-![](public/images/hackthebox/cap/cap-port-80.png)
+![](/images/hackthebox/cap/cap-port-80.png)
 
 Hmm, static page. Let's explore the second one!
 
-![](public/images/hackthebox/cap/cap-pcap-idor.png)
+![](/images/hackthebox/cap/cap-pcap-idor.png)
 
 Hmm, It shows 3 in the URL... what if we changed it to 0? Let's try!
 
-![](public/images/hackthebox/cap/cap-idor-0.png)
+![](/images/hackthebox/cap/cap-idor-0.png)
 
 It worked!
 
@@ -113,7 +107,7 @@ It worked!
 
 Let's Download the pcap file and explore it with wireshark.
 
-![](public/images/hackthebox/cap/cap-pcap-0.png)
+![](/images/hackthebox/cap/cap-pcap-0.png)
 
 Voila! We got credentials!!!
 
@@ -136,7 +130,7 @@ Running `linpeas.sh` revealed this:
 /usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip
 ```
 
-Searching on [gtfobins ](https://gtfobins.github.io/gtfobins/python/#capabilities 'gtfobins')we knew it's a priv esc vector! Let's run it!
+Searching on [gtfobins](https://gtfobins.github.io/gtfobins/python/#capabilities) we knew it's a priv esc vector! Let's run it!
 
 ```shell
 nathan@cap:~$ /usr/bin/python3.8 -c 'import os; os.setuid(0); os.system("/bin/bash")'
